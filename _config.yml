@@ -1,0 +1,38 @@
+# Book settings
+######################################################################################
+# Book settings
+title: "ATSC 448 2024"
+author: Philip Austin
+email: paustin@eoas.ubc.ca
+description: >- # this means to ignore newlines until "baseurl:"
+  Website for EOAS ATSC 448
+
+only_build_toc_files: true
+
+exclude_patterns: [".jupyter_cache/*",_build, Thumbs.db, .DS_Store, "*.ipynb_checkpoints"]
+
+execute:
+  execute_notebooks: force
+  cache: .jupyter_cache
+  allow_errors: true
+  timeout: 120
+  exclude_patterns:
+    - '*.jupyter_cache*'
+
+parse:
+  myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    - amsmath
+    - colon_fence
+    - dollarmath
+    - html_admonition
+    - html_image
+
+repository:
+  url: https://github.com/phaustin/a448_2024
+  branch: master
+  path_to_book: .
+
+html:
+  home_page_in_navbar: true
+  baseurl: https://phaustin.github.io/a448_2024
+  
