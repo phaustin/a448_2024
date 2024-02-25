@@ -22,7 +22,6 @@ from pathlib import Path
 import cartopy.crs as ccrs
 import cartopy
 from matplotlib import pyplot as plt
-import pycrs
 import numpy as np
 ```
 
@@ -38,11 +37,6 @@ rio_image1 = rioxarray.open_rasterio(image1, mask_and_scale = True)
 rio_image2 = rioxarray.open_rasterio(image2, mask_and_scale = True)
 wkt_text = rio_image1.spatial_ref.crs_wkt
 wkt_text
-```
-
-```{code-cell} ipython3
-proj4_crs = pycrs.parse.from_esri_wkt(wkt_text).to_proj4()
-proj4_crs
 ```
 
 ```{code-cell} ipython3
@@ -172,13 +166,13 @@ ax2.set_title('image 1');
 
 ```{code-cell} ipython3
 ul_col, ul_row = ~image2.rio.transform()*(ul_x,ul_y)
-ul_col,ul_row = int(ul_col), int(ul_row)
+ul_col,ul_row = int(np.round(ul_col)), int(np.round(ul_row))
 ul_col,ul_row
 ```
 
 ```{code-cell} ipython3
 lr_col, lr_row = ~image2.rio.transform()*(lr_x, lr_y)
-lr_col,lr_row = int(lr_col), int(lr_row)
+lr_col,lr_row = int(np.round(lr_col)), int(np.round(lr_row))
 lr_col, lr_row
 ```
 
