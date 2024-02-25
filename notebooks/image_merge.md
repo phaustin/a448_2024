@@ -23,6 +23,7 @@ import cartopy.crs as ccrs
 import cartopy
 from matplotlib import pyplot as plt
 import pycrs
+import numpy as np
 ```
 
 ## open the images
@@ -71,12 +72,12 @@ image2 = rio_image2.squeeze()
 
 ## reproject onto UTM Zone 10N
 
-Reference [EPSG:3157](https://spatialreference.org/ref/epsg/3157) 
+Reference [EPSG:3157](https://spatialreference.org/ref/epsg/3157)  -- keep resolution at 926 meters
 
 ```{code-cell} ipython3
 code = "EPSG:3157"
-image1 = image1.rio.reproject(code)
-image2 = image2.rio.reproject(code)
+image1 = image1.rio.reproject(code,resolution=926)
+image2 = image2.rio.reproject(code,resolution=926)
 image1.spatial_ref.crs_wkt
 ```
 
@@ -92,7 +93,7 @@ geodetic = ccrs.Geodetic()
 image1.rio.transform(), image2.rio.transform()
 ```
 
-bounds are 
+bounds are
 
 ```{code-cell} ipython3
 image1.rio.bounds(), image2.rio.bounds()
@@ -130,28 +131,34 @@ ax2.set_title('image 2');
 
 ## find ul and lr corners of image 1
 
-Use the [affine transform](https://www.perrygeo.com/python-affine-transforms.html)
+Use the [affine transform](https://www.perrygeo.com/python-affine-transforms.html) to find the
+row, column in the image1 array that correspont to the ul and lr corners
 
 ```{code-cell} ipython3
 image1.shape, image2.shape
 ```
 
+## find the ul column, row
+
 ```{code-cell} ipython3
 ul_col, ul_row = ~image1.rio.transform()*(ul_x,ul_y)
-ul_col,ul_row = int(ul_col), int(ul_row)
+ul_col,ul_row = int(np.round(ul_col)), int(np.round(ul_row))
 ul_col,ul_row
 ```
 
+## find the lr column, row
+
 ```{code-cell} ipython3
 lr_col, lr_row = ~image1.rio.transform()*(lr_x, lr_y)
-print(lr_col,lr_row)
-lr_col,lr_row = int(lr_col), int(lr_row)
+lr_col,lr_row = int(np.round(lr_col)), int(np.round(lr_row))
 lr_col, lr_row
 ```
 
+## slice the array between those rows and columns
+
 ```{code-cell} ipython3
 image1 = image1[ul_row:lr_row,ul_col:lr_col]
-image1.shape
+print(f"{image1.shape=}")
 ```
 
 ```{code-cell} ipython3
@@ -177,7 +184,7 @@ lr_col, lr_row
 
 ```{code-cell} ipython3
 image2 = image2[ul_row:lr_row,ul_col:lr_col]
-image2.shape
+print(f"{image2.shape=}")
 ```
 
 ```{code-cell} ipython3
@@ -185,6 +192,33 @@ fig, ax2 = plt.subplots(1,1,figsize=(10,8),subplot_kw = kw_dict)
 image2.plot.imshow(ax=ax2)
 ax2.set_extent(extent, crs = projection)
 ax2.set_title('image 2');
+```
+
+## now combine the images
+
+Set the nans to zeros so you can add the images together, then set
+the remaining zeros back to nans
+
+```{code-cell} ipython3
+data1 = np.nan_to_num(image1,nan=0)
+plt.imshow(data1);
+```
+
+```{code-cell} ipython3
+data2 = np.nan_to_num(image2,nan=0)
+plt.imshow(data2);
+```
+
+```{code-cell} ipython3
+combined = data1[:,:] + data2[:,:]
+```
+
+```{code-cell} ipython3
+final_image = np.where(combined==0, np.nan, combined)
+```
+
+```{code-cell} ipython3
+plt.imshow(final_image);
 ```
 
 ```{code-cell} ipython3
