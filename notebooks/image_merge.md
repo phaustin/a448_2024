@@ -30,7 +30,7 @@ import numpy as np
 The default nasa projection is a [custom sinusoidal grid](https://pro.arcgis.com/en/pro-app/3.1/help/mapping/properties/sinusoidal.htm#:~:text=Sinusoidal%20is%20a%20pseudocylindric%20projection,central%20meridian%20and%20equally%20spaced.)
 
 ```{code-cell} ipython3
-images = (Path.home() / "repos/a448_2024/data").glob("*tif")
+images = (Path.home() / "repos/a448_2024/data").glob("*MYD*tif")
 images = list(images)
 image1, image2 = images
 rio_image1 = rioxarray.open_rasterio(image1, mask_and_scale = True)
@@ -213,6 +213,18 @@ final_image = np.where(combined==0, np.nan, combined)
 
 ```{code-cell} ipython3
 plt.imshow(final_image);
+```
+
+```{code-cell} ipython3
+image1.data = final_image[...]
+```
+
+```{code-cell} ipython3
+image1.rio.transform()
+```
+
+```{code-cell} ipython3
+image2.rio.transform()
 ```
 
 ```{code-cell} ipython3
