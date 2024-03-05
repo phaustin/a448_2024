@@ -18,8 +18,7 @@ This notebook takes geotiffs written with NASA's sinusoidal crs and resamples th
 grid with a UTM zone 10 crs [epsg 3157 ](https://spatialreference.org/ref/epsg/3157)
 
 We use [rioxarray](https://corteva.github.io/rioxarray/stable/) to get the crs information and [pyresample](https://pyresample.readthedocs.io/en/latest/concepts/index.html) to do the resampling.  The [pyproj](https://pyproj4.github.io/pyproj/stable/index.html) package is used to transform the lon/lat bounding box
-into UTM coodinates for the area_def
-
+into UTM coodinates for the area_def.   
 
 ```{code-cell} ipython3
 import rioxarray
@@ -51,6 +50,10 @@ wkt_text1 = rio_image1.spatial_ref.crs_wkt
 ```
 
 Here is the sinusoidal crs in wkt format
+
+```{code-cell} ipython3
+rio_image1
+```
 
 ```{code-cell} ipython3
 wkt_text1
@@ -127,7 +130,6 @@ We need:
 
 We want our area_extent to have these corners, need to project to utm zone 10 coords
 
-
 +++
 
 ### Get the extent in UTM Zone10N coords
@@ -178,19 +180,6 @@ merge = out1 + out2
 hit = merge ==0
 merge[hit]=np.nan
 plt.imshow(merge);
-```
-
-```{code-cell} ipython3
-import cartopy.crs as ccrs
-import cartopy
-code = 32610
-projection = cartopy.crs.epsg(code)
-fig, ax = plt.subplots(1, 1, figsize=(10, 10), subplot_kw={"projection": projection})
-ax.set_extent(cartopy_extent,projection)
-ax.gridlines(linewidth=2)
-ax.add_feature(cartopy.feature.GSHHSFeature(scale="auto", levels=[1, 2, 3]))
-cartopy_extent =  [ll_x, ur_x, ll_y, ur_y]
-
 ```
 
 ```{code-cell} ipython3
