@@ -18,7 +18,7 @@ This notebook takes geotiffs written with NASA's sinusoidal crs and resamples th
 grid with a UTM zone 10 crs [epsg 3157 ](https://spatialreference.org/ref/epsg/3157)
 
 We use [rioxarray](https://corteva.github.io/rioxarray/stable/) to get the crs information and [pyresample](https://pyresample.readthedocs.io/en/latest/concepts/index.html) to do the resampling.  The [pyproj](https://pyproj4.github.io/pyproj/stable/index.html) package is used to transform the lon/lat bounding box
-into UTM coodinates for the area_def.   
+into UTM coodinates for the area_def.
 
 ```{code-cell} ipython3
 import rioxarray
@@ -41,8 +41,11 @@ The default nasa projection is a [custom sinusoidal grid](https://pro.arcgis.com
 use rioxarray to get the coordinate reference system for the modis images
 
 ```{code-cell} ipython3
-images = (Path.home() / "repos/a448_2024/data").glob("*MYD*tif")
-images = list(images)
+#images = (Path.home() / "repos/a448_2024/data").glob("*MYD*tif")
+image_dir = Path.home() / ("Dropbox/phil_files/teaching/a448_2024/"
+                         "propposals/hannah/MODIS_images/MODIS_Images")
+year_dir = image_dir / "2021_MODIS_images"
+images = list(year_dir.glob("*.tif"))
 image1, image2 = images
 rio_image1 = rioxarray.open_rasterio(image1, mask_and_scale = True)
 rio_image2 = rioxarray.open_rasterio(image2, mask_and_scale = True)
@@ -162,15 +165,36 @@ vancouver_area_def
 ## resample both images into the vancouver area_def
 
 ```{code-cell} ipython3
+from matplotlib import cm
+from matplotlib.colors import Normalize
+import copy
+cmap = plt.get_cmap("plasma")
+vmin=300
+vmax = 330
+the_norm=Normalize(vmin=vmin,vmax=vmax,clip=False)
+over = 'w'
+under='k'
+missing='0.4'
+cmap=copy.copy(cmap)
+cmap.set_over(over)
+cmap.set_under(under)
+cmap.set_bad(missing)
+```
+
+```{code-cell} ipython3
 data1 = rio_image1.data.ravel()
 data2 = rio_image2.data.ravel()
 out1 = pyresample.kd_tree.resample_nearest(rio1_def,data1, vancouver_area_def,radius_of_influence=500,fill_value=0)
 out2 = pyresample.kd_tree.resample_nearest(rio2_def,data2, vancouver_area_def,radius_of_influence=500,fill_value=0)
-plt.imshow(out1);
+cs = plt.imshow(out1,cmap=cmap,norm=the_norm)
+fig = plt.gcf()
+fig.colorbar(cs, extend="both");
 ```
 
 ```{code-cell} ipython3
-plt.imshow(out2)
+cs = plt.imshow(out2,cmap=cmap,norm=the_norm)
+fig = plt.gcf()
+fig.colorbar(cs, extend="both");
 ```
 
 ## Create the merged image
@@ -179,7 +203,20 @@ plt.imshow(out2)
 merge = out1 + out2
 hit = merge ==0
 merge[hit]=np.nan
-plt.imshow(merge);
+cs = plt.imshow(merge,cmap=cmap,norm=the_norm)
+fig = plt.gcf()
+fig.colorbar(cs, extend="both");
+```
+
+```{code-cell} ipython3
+hit = merge > 500
+merge[hit]=np.nan
+```
+
+```{code-cell} ipython3
+cs = plt.imshow(merge,cmap=cmap,norm=the_norm)
+fig = plt.gcf()
+fig.colorbar(cs, extend="both");
 ```
 
 ```{code-cell} ipython3
