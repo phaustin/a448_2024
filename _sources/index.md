@@ -2,12 +2,13 @@
 
 - Logistics
   - Instructor:  Phil Austin EOS South Room 157
-  - Room: EOS Main 107
+  - Meeting room: zoom or in person at office
+  - Meeting time: Select all timeslots you can make on [whenisgood](https://whenisgood.net/xj4khmm)
 
 
-- Main course homepage: [phaustin.github.io/a405_2024](https://phaustin.github.io/a405_2024)
+- Main course homepage: [phaustin.github.io/a448_2024](https://phaustin.github.io/a448_2024)
 
-- [Canvas website](https://canvas.ubc.ca/courses/129113)
+- Discussions/questions: signup on [piazza](https://piazza.com/ubc.ca/winterterm22024/atsc448)
 
 ## How the course works
 
@@ -23,7 +24,7 @@ This course is focussed on producing an independent project report and presentat
 
 ### Weeks 4-9
 
-- Step 3: Sign off on project perposal
+- Step 3: Sign off on project proposal
 - Step 4: Get data/analyze
 - Step 5: First draft
 
