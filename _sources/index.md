@@ -49,11 +49,11 @@ Download [a448_proposal.docx](https://www.dropbox.com/scl/fi/4xgtmtdaf57xvw4abmr
 
 ## Examples of previous reports
 
-- [download from this folder](https://www.dropbox.com/scl/fo/vycttkf9ugwozpqzalm2d/h?rlkey=u92yirdirr5n1neasr47vvooc&dl=0)
+- [download from this folder](https://www.dropbox.com/scl/fo/vycttkf9ugwozpqzalm2d/h?rlkey=u92yirdirr5n1neasr47vvooc&st=om1afhfe&dl=0)
 
 ## Grading rubrics
 
-- [Report Rubric](https://www.dropbox.com/scl/fi/d3kn91yf7jq4x50z3u9ey/projects_rubric.pdf?rlkey=44bm9s0ygxspjz3haklv4ogrb&dl=0)
-- [Presentation Rubric](https://www.dropbox.com/scl/fi/zmskgeim2bm80akkxare9/a448_presentations_rubric.pdf?rlkey=gh8w1feg1f0kmopta1fo6mx9e&dl=0)
 
+- [Report Rubric](https://www.dropbox.com/scl/fi/d3kn91yf7jq4x50z3u9ey/projects_rubric.pdf?rlkey=44bm9s0ygxspjz3haklv4ogrb&st=41fwyawl&dl=0
+- [Presentation Rubric](https://www.dropbox.com/scl/fi/zmskgeim2bm80akkxare9/a448_presentations_rubric.pdf?rlkey=gh8w1feg1f0kmopta1fo6mx9e&st=681tuq42&dl=0)
 
