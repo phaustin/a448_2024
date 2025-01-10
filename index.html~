@@ -404,7 +404,7 @@ document.write(`
 <section id="grading-rubrics">
 <h2>Grading rubrics<a class="headerlink" href="#grading-rubrics" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.dropbox.com">Report Rubric</a></p></li>
+<li><p><a class="reference external" href="https://www.dropbox.com/scl/fi/d3kn91yf7jq4x50z3u9ey/projects_rubric.pdf?rlkey=44bm9s0ygxspjz3haklv4ogrb&amp;st=41fwyawl&amp;dl=0">Report Rubric</a></p></li>
 <li><p><a class="reference external" href="https://www.dropbox.com/scl/fi/zmskgeim2bm80akkxare9/a448_presentations_rubric.pdf?rlkey=gh8w1feg1f0kmopta1fo6mx9e&amp;st=681tuq42&amp;dl=0">Presentation Rubric</a></p></li>
 </ul>
 </section>
