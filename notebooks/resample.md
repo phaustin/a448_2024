@@ -52,6 +52,10 @@ rio_image2 = rioxarray.open_rasterio(image2, mask_and_scale = True)
 wkt_text1 = rio_image1.spatial_ref.crs_wkt
 ```
 
+```{code-cell} ipython3
+image1
+```
+
 Here is the sinusoidal crs in wkt format
 
 ```{code-cell} ipython3
