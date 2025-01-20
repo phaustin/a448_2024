@@ -39,7 +39,11 @@ This course is focussed on producing an independent project report and presentat
 
 ## Proposal outline
 
-Download [a448_proposal.docx](https://www.dropbox.com/scl/fi/4xgtmtdaf57xvw4abmrod/a448_proposal.docx?rlkey=94un60k223ohmwlv2ay36ok7k&dl=0)
+All files are available from folders on [google drive](https://drive.google.com/drive/folders/10XWa7el3TCekLNQSKrkUizzBSNyz4grQ?usp=sharing)
+
+
+
+Download the proposal approval from the `proposals_and_rubrics` folder 
 
 ## How to get started
 
@@ -49,11 +53,10 @@ Download [a448_proposal.docx](https://www.dropbox.com/scl/fi/4xgtmtdaf57xvw4abmr
 
 ## Examples of previous reports
 
-- [download from this folder](https://www.dropbox.com/scl/fo/vycttkf9ugwozpqzalm2d/h?rlkey=u92yirdirr5n1neasr47vvooc&st=om1afhfe&dl=0)
+- see the `reports` folder
 
-## Grading rubrics
+## Grading rubrics for proposals and presentations
 
+- see the `proposals_and_rubrics` folder
 
-- [Report Rubric](https://www.dropbox.com/scl/fi/d3kn91yf7jq4x50z3u9ey/projects_rubric.pdf?rlkey=44bm9s0ygxspjz3haklv4ogrb&st=41fwyawl&dl=0)
-- [Presentation Rubric](https://www.dropbox.com/scl/fi/zmskgeim2bm80akkxare9/a448_presentations_rubric.pdf?rlkey=gh8w1feg1f0kmopta1fo6mx9e&st=681tuq42&dl=0)
 
