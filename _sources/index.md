@@ -60,3 +60,10 @@ Download the proposal approval from the `proposals_and_rubrics` folder
 - see the `proposals_and_rubrics` folder
 
 
+## Resources
+
+- [Computational tools in climate science](https://comptools.climatematch.io/tutorials/intro.html)
+- [CMIP6 links](https://phaustin.github.io/climate_students_eoas/resources/resource_links.html#cmip6) 
+- [Google colab climate data tutorial](https://www.linkedin.com/pulse/python-climate-data-analysis-tutorial-code-ali-ahmadalipour/)
+- [CMIP6 ans LENS tutorials](https://phaustin.github.io/climate_students_eoas/resources/resource_links.html)
+
