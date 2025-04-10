@@ -67,3 +67,27 @@ Download the proposal approval from the `proposals_and_rubrics` folder
 - [Google colab climate data tutorial](https://www.linkedin.com/pulse/python-climate-data-analysis-tutorial-code-ali-ahmadalipour/)
 - [CMIP6 ans LENS tutorials](https://phaustin.github.io/climate_students_eoas/resources/resource_links.html)
 
+## Presentations
+
+- Where: EOSC Main Room 121
+- When:  12 noon - 2pm Friday April 11
+- Details
+  - 12 minutes plus 3 minutes for questions
+  - Everyone asks 2 questions during the event
+  - Upload your slides to your [project folder](https://drive.google.com/drive/folders/108lo_zvw0X2K1Dk9nEBqtdM3gfUt0qNd?usp=sharing) before your talk
+  - [Rubric](https://drive.google.com/file/d/12FWXsKE4OfOX4fSsYbDZdyHP_2lxxWFM/view?usp=sharing)
+  - [Rachel White's presentation review slides](https://drive.google.com/file/d/1xf1SlZ9lqH8mlYSsd8bAMHq9lVh2J8MH/view?usp=drive_link)
+  - [AMS guidelines](https://www.ametsoc.org/ams/meetings-events/abstract-author-and-presenter-information/ams-presenter-guidelines/oral-presenter-guidelines/)
+  - [AMS presentation webinar](https://zoom.us/recording/play/CL98FnQluBcGEAawIwUYBlnj_tWtQUqkhsuct0xlrAXuEA_aXIcok1vl36nny7Di?startTime=1570557335000&fbclid=IwAR2PN4jK8O3Pfy8WFHi3OPtpnx1neJGqQ3NtmxgtCR-lezkzIUuLb8WPD_s)
+  - Presentation order
+    - Kevin
+    - Jalena
+    - Jordana
+    - Keely
+    - Janesha
+    - Andrew
+    - Kat
+    - Justin
+  - [Pizza order](https://docs.google.com/spreadsheets/d/1PtHsRo0I0_IbSrn78L0ENgGxNmcIE9YVoUMMGpH3nAs/edit?usp=sharing)
+  
+  
